@@ -5,4 +5,12 @@
     font-weight:1200;
   }
 
-  
+
+  form {
+    padding:20px;
+  }
+
+  .col-4 {
+    background:rgb(228, 228, 228);
+    height:100vh;
+  }
