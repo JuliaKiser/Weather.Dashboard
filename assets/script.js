@@ -1,7 +1,7 @@
-var citysearched = "charlotte"
+var citysearched = "Charlotte"
 
 $.ajax ({
-    url: "api.openweathermap.org/data/2.5/weather?q=" + citysearched + "&appid=2c43a84955b43240c8d4fb64e9a027c5",
+    url: "https://api.openweathermap.org/data/2.5/weather?q=" + citysearched + "&appid=2c43a84955b43240c8d4fb64e9a027c5",
     method: "GET"
 })
 .then(function(response) {
@@ -15,7 +15,6 @@ $.ajax ({
 });
 
 var searchedCity = $("#selected");
-console.log(response)
 searchedCity.append($(".citysearched").text(response.name + " (" + moment().format('L') + ")"));
 searchedCity.append($(".temperature").text("Current Temperature (F): " + response.main.temp.toFixed(2)));
 
