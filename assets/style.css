@@ -10,7 +10,26 @@
     padding:20px;
   }
 
-  .col-4 {
-    background:rgb(228, 228, 228);
-    height:100vh;
+  .col-sm-4 {
+   float:left;
   }
+
+  /* .col-sm-8 {
+    float:right;
+  } */
+  
+form button {
+  background-color: rgb(48, 128, 231);
+  color:white;
+}
+
+form button:hover{
+background-color: rgb(7, 0, 100);
+}
+
+#Monday, #Tuesday, #Wednesday, #Thursday, #Friday {
+ background-color: rgb(48, 128, 231);
+ display: flex;
+ justify-content: space-around;
+ margin:10px;
+}

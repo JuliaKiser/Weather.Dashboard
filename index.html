@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <header class="jumbotron">
         <h1 class="display-4">Weather Dashboard</h1>
     </header>
+<div class="container">
+    <div class="row">
+    <div class="col-sm-3">
+        <form class="form-inline">
+            <label for="search-box"><strong>Search for a City:</strong></label>
+            <br>
+            <input type="text" placeholder="Search" name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
 
- <div class="parent-container d-flex">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-            </div>
-        </div>
+        <div id="history"></div>
     </div>
-        <div class="col-8">This is other info
-
-        </div>
+    <div class="col-sm-9">
+        <div class="selected">
+      <h3 class="citysearched">.</h3>
+      <p class="temperature">.</p>
+      <p class="humidity">.</p>
+      <p class="windspeed">.</p>
+      <p class="UVindex">.</p>
+      </div>
+      <div class="dates">
+        <h2>5-Day Forcast</h2>
+      <div class="row" id="dayslist">
+          <div class="col-sm-2" id="Monday">Monday</div>
+          <div class="col-sm-2" id="Tuesday">Tuesday</div>
+          <div class="col-sm-2" id="Wednesday">Wednesday</div>
+          <div class="col-sm-2" id="Thursday">Thursday</div>
+          <div class="col-sm-2" id="Friday">Friday</div>
+      </div>
+    </div>
+    </div>
 </div>
-<script src="assets/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+</div>
+
+    <script src="assets/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
