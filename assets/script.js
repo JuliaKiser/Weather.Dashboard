@@ -1,9 +1,19 @@
 $(document).ready(function() {
 
-    $("#submit").on("click", function(){
-        console.log("Inside button click");
-        var citysearched = $("#searchcity").val();
+    var searches =JSON.parse(localStorage.getItem("searches")) || [];
 
+    function renderHistory() {
+        $("#history").empty();
+
+        var mostrecent = searches.slice(0, 4);
+        for (var i=0; i < mostrecent.length; i++){
+            $("#history").append($("<a href='' class='city list-group-item'>")).text(mostrecent[i]);
+        }
+    }
+    $("#submit").on("click", function(){
+        console.log("City You Searched");
+        var citysearched = $("#searchcity").val();
+        
         $.ajax ({
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + citysearched + "&units=imperial&appid=2c43a84955b43240c8d4fb64e9a027c5",
             method: "GET"
@@ -11,10 +21,14 @@ $(document).ready(function() {
         })
         .then(function(response) {
             console.log(response)
-            /*if(!searches.include(response.name)) {
+            
+            if (!searches.includes(response.name)) {
                 searches.push(response.name);
-            }*/
-
+            }
+            localStorage.setItem("searches", JSON.stringify(searches));
+            $("#searchcity").val("");
+            renderHistory();
+            
             var c = $("h1");
             c.text(citysearched);
             c.addClass("city");
@@ -33,9 +47,6 @@ $(document).ready(function() {
             wp.text("Wind Speed: "+response.wind.speed);
             $("#selected").append(wp);
 
-            // var index = $("<p>")
-            // index.text("UV Index:  " + response.current.uvi);
-            // $("#selected").append(index);
 
             UVFiveDay(response.coord.lat, response.coord.lon)
         });
@@ -66,6 +77,8 @@ $(document).ready(function() {
             .then(function(response) {
                 console.log(response)
 
+                $("#dayslist").empty();
+
                 for (var i = 1; i < 6; i++) {
                     var div = $("<div>")
                     var col = $("<div class='col-md-2'>")
@@ -89,11 +102,7 @@ $(document).ready(function() {
             })
         }
     })
-    function createStorage {
-        localStorage.setItem("citysearched", JSON.stringify(arr));
-    }
+    renderHistory();
 
-    function displayCities() {
-        
-    }
+
 })

@@ -14,9 +14,6 @@
    float:left;
   }
 
-  /* .col-sm-8 {
-    float:right;
-  } */
   
 form button {
   background-color: rgb(48, 128, 231);
@@ -32,4 +29,9 @@ background-color: rgb(7, 0, 100);
  display: flex;
  justify-content: space-around;
  margin:10px;
+}
+
+#dayslist {
+  display:flex;
+  flex-direction: row;
 }
