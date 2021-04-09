@@ -11,14 +11,14 @@ $(document).ready(function() {
             $("#history").append($("<button class='city list-group-item'>").text(searches[i]).attr("data-value", searches[i]));
         }
     }
-
+    //When the user clicks on a city from the history list, it takes button value and passes it to searchWeather()
     $(document).on("click", ".list-group-item", function() {
         $("#selected").show();
         var citysearched = $(this).attr("data-value");
         searchWeather(citysearched);
         
     })
-
+    //Take value from search bar and runs ajax API
         $("#submit").on("click", function(){
             console.log("City You Searched");
             var citysearched = $("#searchcity").val();
@@ -42,7 +42,7 @@ $(document).ready(function() {
                 localStorage.setItem("searches", JSON.stringify(searches));
                 $("#searchcity").val("");
                 renderHistory();
-                
+
                 var c = $("<h1>");
                 c.text(citysearched);
                 c.addClass("city");
@@ -80,6 +80,10 @@ $(document).ready(function() {
                     index.text("UV Index:  " + response.current.uvi);
                     $("#selected").append(index);
 
+                    var header = $("<h1>")
+                    header.text("5 Day Forecast")
+                    $("#selected").append(header)
+
                 })
 
                 // Gets 5 Day Forcast
@@ -94,8 +98,8 @@ $(document).ready(function() {
                     $("#dayslist").empty();
 
                     for (var i = 1; i < 6; i++) {
-                        var div = $("<div>")
-                        var col = $("<div class='col-md-2'>")
+                        var div = $("<div class='fivedayContainer'>")
+                        var col = $("<div class='col-md-2 fiveday'>")
 
                         var icon = $("<img>")
                             icon.attr("src", "https://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + ".png")

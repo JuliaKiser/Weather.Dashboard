@@ -5,6 +5,9 @@
     font-weight:1200;
   }
 
+  #container {
+    background: darkblue;
+  }
 
   form {
     padding:20px;
@@ -34,4 +37,54 @@ background-color: rgb(7, 0, 100);
 #dayslist {
   display:flex;
   flex-direction: row;
+}
+
+#topbox {
+  background-color: rgb(148, 148, 160);
+}
+
+#topbox {
+  border:solid;
+  align-items: center;
+}
+
+#searching {
+  background: rgb(131, 131, 131);
+  border:solid;
+  align-items: center;
+}
+
+#history {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  padding:10px;
+}
+
+.list-group-item {
+  margin:5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 800;
+}
+
+.list-group-item:hover {
+  margin:5px;
+  background-color: teal;
+}
+
+#col-md-2 {
+  border:solid;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin:30px;
+}
+
+
+.fivedayContainer {
+  background:rgb(91, 134, 145);
+  width:200px;
+  border:solid;
+  padding:3px;
+  margin:4px;
 }
