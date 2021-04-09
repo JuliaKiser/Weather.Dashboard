@@ -1,13 +1,14 @@
 $(document).ready(function() {
 
-    var searches =JSON.parse(localStorage.getItem("searches")) || [];
+    var searches = JSON.parse(localStorage.getItem("searches")) || [];
 
     function renderHistory() {
+        $("#selected").empty();
         $("#history").empty();
 
-        var mostrecent = searches.slice(0, 4);
-        for (var i=0; i < mostrecent.length; i++){
-            $("#history").append($("<a href='' class='city list-group-item'>")).text(mostrecent[i]);
+        // var mostrecent = searches.slice(0, 4); This limits the city list to display only 4 cities.
+        for (var i=0; i < searches.length; i++){
+            $("#history").append($("<a href='' class='city list-group-item'>").text(searches[i]));
         }
     }
     $("#submit").on("click", function(){
@@ -29,7 +30,7 @@ $(document).ready(function() {
             $("#searchcity").val("");
             renderHistory();
             
-            var c = $("h1");
+            var c = $("<h1>");
             c.text(citysearched);
             c.addClass("city");
             $("#selected").append(c);
@@ -95,10 +96,6 @@ $(document).ready(function() {
                     $("#dayslist").append(div.append(col.append(icon, temp, humidity)))
 
                 }
-
-
-        
-
             })
         }
     })
