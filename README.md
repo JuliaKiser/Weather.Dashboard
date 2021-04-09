@@ -7,9 +7,9 @@
 4. [Acceptance Criteria](##Acceptance-Criteria)
 
 ## Webpage Links
-Deployed Link: 
+Deployed Link: https://juliakiser.github.io/Weather.Dashboard/
 
-Github Repo Link: 
+Github Repo Link: https://github.com/JuliaKiser/Weather.Dashboard 
 
 
 ## Webpage Details
